@@ -19,7 +19,7 @@ from .forms import QuickAddForm
 
 
 @login_required(login_url='login')
-def QuickSell(request):
+def QuickAdd(request):
     form = QuickAddForm()
     if request.method == 'POST':
         form = QuickAddForm(request.POST)
@@ -29,4 +29,4 @@ def QuickSell(request):
             product.save()
             return redirect('product-list')
     context = {'form': form}
-    return render(request, 'store/create_product.html', context)
+    return render(request, 'store/quickadd.html', context)
