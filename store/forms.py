@@ -1,5 +1,11 @@
 from django import forms
-from .models import QuickAdd, Category
+from .models import QuickAdd, Category,QuickProduct
+
+
+class QuickAddForm(forms.ModelForm):
+    class Meta:
+        model = QuickProduct
+        fields = '__all__'
 
 
 """class QuickProductForm(forms.ModelForm):

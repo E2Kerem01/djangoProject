@@ -37,3 +37,14 @@ class QuickAdd(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
+
+class QuickProduct(models.Model):
+    product_name = models.CharField(max_length=255)
+    stock_quantity = models.IntegerField()
+    cost = models.DecimalField(max_digits=10, decimal_places=2)
+    selling_price = models.DecimalField(max_digits=10, decimal_places=2)
+    unit = models.CharField(max_length=50, blank=True)  # Boş bırakılabilir
+    category = models.CharField(max_length=50, blank=True)  # Boş bırakılabilir
+    quick_sale = models.CharField(max_length=50, blank=True)  # Boş bırakılabilir
+    kdv_rate = models.DecimalField(max_digits=5, decimal_places=2)
+    product_image = models.ImageField(upload_to='product_images/', blank=True, null=True)  # Boş bırakılabilir ve null olabilir

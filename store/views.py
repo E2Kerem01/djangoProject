@@ -3,6 +3,17 @@ from django.shortcuts import render, HttpResponse, redirect
 from .forms import QuickAddForm
 
 
+def quick_add_product(request):
+    if request.method == 'POST':
+        form = QuickAddForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('product-list')  
+    else:
+        form = QuickAddForm()
+    return render(request, 'templates/store/quickadd.html', {'form': form})
+
+
 # Create your views here.
 
 
