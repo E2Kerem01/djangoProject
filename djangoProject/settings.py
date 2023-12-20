@@ -64,6 +64,7 @@ TEMPLATES = [
         'DIRS':  [
             # Projedeki şablon klasörlerinin yolu buraya eklenmeli
             os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates', 'users'),
             # ... Diğer şablon klasörlerinin yolları devam eder
         ]
         ,
@@ -92,16 +93,7 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#      'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': env('kerem_db'),
-#         'USER': env('kerem_user'),
-#         'PASSWORD': env('kerem_password'),
-#         'HOST': env('DB_HOST', default='localhost'),  # Varsayılan olarak 'localhost' kullanabilirsiniz
-#         'PORT': env.int('DB_PORT', default=5432),
-#     }
-# }
+
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
